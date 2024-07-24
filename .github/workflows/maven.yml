@@ -34,7 +34,7 @@ jobs:
     #- name: Update dependency graph
     #  uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
 
-name: Example workflow for Maven using Snyk
+name: Example workflow for Maven (3-jdk-11) using Snyk
 on: push
 jobs:
   security:
@@ -42,6 +42,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/maven@master
+        uses: snyk/actions/maven-3-jdk-11@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
